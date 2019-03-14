@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-
+        //Find out the max number from an array
         int[] nr = {1, 102, 48, 13,2,0,-4};
         int max = 0;
         int min = nr[0];
