@@ -1,4 +1,4 @@
-public class Dealership {
+public class Dealership{
 
    private boolean stock;
    private int price;
@@ -8,6 +8,29 @@ public class Dealership {
       this.price = price;
    }
 
-   Cars car1 = new Cars(true,false,120,"Q7",1992,"BMW");
+   public boolean isStock() {
+      return stock;
+   }
+
+   public Dealership setStock(boolean stock) {
+      this.stock = stock;
+      return this;
+   }
+
+   public int getPrice() {
+      return price;
+   }
+
+   public Dealership setPrice(int price) {
+      this.price = price;
+      return this;
+   }
+
+
+
+   @Override
+   public String toString() {
+      return "\nStock" + stock + "\nPrice" + price;
+   }
 
 }
