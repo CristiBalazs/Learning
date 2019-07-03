@@ -6,17 +6,20 @@ public class Cars  {
     private String models;
     private int productionYear;
     private String manufacturer;
+    private boolean fastCharging;
+    private int stock;
 
 
-    private Dealership dealership;
-
-    public Cars(boolean electricMotor, boolean electricBattery, int energyConsumption, String models, int productionYear, String manufacturer) {
+    public Cars(boolean electricMotor, boolean electricBattery, int energyConsumption, String models,
+                int productionYear, String manufacturer, boolean fastCharging, int stock) {
         this.electricMotor = electricMotor;
         this.electricBattery = electricBattery;
         this.energyConsumption = energyConsumption;
         this.models = models;
         this.productionYear = productionYear;
         this.manufacturer = manufacturer;
+        this.fastCharging = fastCharging;
+        this.stock = stock;
     }
 
     public boolean isElectricMotor() {
@@ -73,11 +76,38 @@ public class Cars  {
         return this;
     }
 
+    public boolean isFastCharging() {
+        return fastCharging;
+    }
+
+    public Cars setFastCharging(boolean fastCharging) {
+        this.fastCharging = fastCharging;
+        return this;
+    }
+
+    public int isStock() {
+        return stock;
+    }
+
+    public Cars setStock(int stock) {
+        this.stock = stock;
+        return this;
+    }
+
+    public boolean isInStock(){
+        if (stock == 0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+
     @Override
     public String toString() {
         return "\nElectricMotor: " + electricMotor + "\nElectricBattery: " + electricBattery + "\nEnergyConsumption: " + energyConsumption +
                 "\nModels: " + models + "\nProductionYear: " + productionYear +
-                "\nManufacturer: " + manufacturer;
+                "\nManufacturer: " + manufacturer + "\nFastCharging: " + fastCharging + "\nStock: " + stock;
     }
 
 }
